@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Garage Service</title>
+    <link rel="stylesheet" href="style.css"> <!-- Menyambungkan file CSS -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>Mobile Garage Service Calculator</h1>
+        
+        <form id="garageForm">
+            <!-- Service Section -->
+            <div class="form-section">
+                <h3>Services</h3>
+                <label for="service">Choose a service:</label>
+                <select id="service">
+                    <option value="0">Select a service...</option>
+                    <option value="13000">Service (Repair) - $13,000</option>
+                    <option value="5000">Wash Vehicle - $5,000</option>
+                    <option value="20000">Break into Vehicle (with STNK) - $20,000</option>
+                </select>
+
+                <div class="checkbox-group">
+                    <label for="serviceAndWash">Service + Wash Combo:</label>
+                    <input type="checkbox" id="serviceAndWash" value="18000"> $18,000 (Service + Wash)
+                </div>
+            </div>
+
+            <!-- Online Order Services Section -->
+            <div class="form-section">
+                <h3>Order Services (Via App)</h3>
+                <label for="onlineService">Choose online service:</label>
+                <select id="onlineService">
+                    <option value="0">Select a service...</option>
+                    <option value="15000">Service (Kota) - $15,000</option>
+                    <option value="20000">Service (Shandy Shores) - $20,000</option>
+                    <option value="25000">Service (Paleto) - $25,000</option>
+                    <option value="20000">Service (Cayo) - $20,000</option>
+                </select>
+            </div>
+
+            <!-- Vehicle Check Section -->
+            <div class="form-section">
+                <h3>Vehicle Check</h3>
+                <label for="vehicleCheck">Check Right Vehicle:</label>
+                <select id="vehicleCheck">
+                    <option value="0">Select a check service...</option>
+                    <option value="10000">Check Right Vehicle - $10,000</option>
+                </select>
+            </div>
+
+            <!-- Out of Fuel Section -->
+            <div class="form-section">
+                <h3>Out of Fuel</h3>
+                <label for="outOfFuel">Choose location for fuel delivery:</label>
+                <select id="outOfFuel">
+                    <option value="0">Select a location...</option>
+                    <option value="10000">Kota - $10,000</option>
+                    <option value="15000">Shandy Shores - $15,000</option>
+                    <option value="20000">Paleto - $20,000</option>
+                </select>
+            </div>
+
+            <!-- Tires Section -->
+            <div class="form-section">
+                <h3>Tire Replacement</h3>
+                <label for="numTires">Number of Tires to Replace:</label>
+                <select id="numTires">
+                    <option value="0">Select number of tires...</option>
+                    <option value="5000">1 Tire - $5,000</option>
+                    <option value="10000">2 Tires - $10,000</option>
+                    <option value="15000">3 Tires - $15,000</option>
+                    <option value="20000">4 Tires - $20,000</option>
+                </select>
+            </div>
+
+            <!-- Doors/Parts Section -->
+            <div class="form-section">
+                <h3>Doors/Parts Replacement</h3>
+                <label for="numParts">Number of Doors/Hoods to Replace:</label>
+                <select id="numParts">
+                    <option value="0">Select number of parts...</option>
+                    <option value="2000">1 Part - $2,000</option>
+                    <option value="4000">2 Parts - $4,000</option>
+                    <option value="6000">3 Parts - $6,000</option>
+                    <option value="8000">4 Parts - $8,000</option>
+                </select>
+            </div>
+
+            <!-- Helicopter Service Section -->
+            <div class="form-section">
+                <h3>Helicopter Service</h3>
+                <label for="helicopterService">Helicopter Service:</label>
+                <select id="helicopterService">
+                    <option value="0">Select a service...</option>
+                    <option value="40000">Service - $40,000</option>
+                </select>
+            </div>
+
+            <!-- Towing Section -->
+            <div class="form-section">
+                <h3>Towing</h3>
+                <label for="towing">Choose Towing Location:</label>
+                <select id="towing">
+                    <option value="0">Select a towing location...</option>
+                    <option value="10000">Pusat Kota - $10,000</option>
+                    <option value="15000">Shandy Shores - $15,000</option>
+                    <option value="20000">Paleto - $20,000</option>
+                </select>
+            </div>
+
+            <!-- Workshop Tool Purchase Section -->
+            <div class="form-section">
+                <h3>Workshop Tool Purchase</h3>
+                <label for="advancedKit">Advanced Kit ($4,000/pcs, Min 20 pcs):</label>
+                <input type="number" id="advancedKit" min="20" placeholder="Minimum 20 pcs" />
+
+                <label for="repairKit">Repair Kit ($3,500/pcs, Min 10 pcs):</label>
+                <input type="number" id="repairKit" min="10" placeholder="Minimum 10 pcs" />
+
+                <label for="cleaningKit">Cleaning Kit ($2,500/pcs, Min 10 pcs):</label>
+                <input type="number" id="cleaningKit" min="10" placeholder="Minimum 10 pcs" />
+
+                <label for="linggis">Linggis ($15,000/pcs, Max 1 pcs):</label>
+                <input type="number" id="linggis" max="1" placeholder="Max 1 pcs" />
+
+                <label for="kunciInggris">Kunci Inggris ($20,000/pcs, Max 1 pcs):</label>
+                <input type="number" id="kunciInggris" max="1" placeholder="Max 1 pcs" />
+            </div>
+
+            <!-- Modifications Section -->
+            <!-- Vehicle Modifications Section -->
+            <div class="form-section">
+                <h3>Vehicle Modifications</h3>
+                
+                <!-- Spoiler -->
+                <div class="modification-option">
+                    <label for="spoiler">
+                        <input type="checkbox" id="spoiler" value="100000">
+                        Spoiler - <strong>$100,000</strong>
+                    </label>
+                </div>
+
+                <!-- Front Bumper -->
+                <div class="modification-option">
+                    <label for="frontBumper">
+                        <input type="checkbox" id="frontBumper" value="100000">
+                        Front Bumper - <strong>$100,000</strong>
+                    </label>
+                </div>
+
+                <!-- Rear Bumper -->
+                <div class="modification-option">
+                    <label for="rearBumper">
+                        <input type="checkbox" id="rearBumper" value="100000">
+                        Rear Bumper - <strong>$100,000</strong>
+                    </label>
+                </div>
+
+                <!-- Roof -->
+                <div class="modification-option">
+                    <label for="roof">
+                        <input type="checkbox" id="roof" value="100000">
+                        Roof - <strong>$100,000</strong>
+                    </label>
+                </div>
+
+                <!-- Side Skirt -->
+                <div class="modification-option">
+                    <label for="sideSkirt">
+                        <input type="checkbox" id="sideSkirt" value="75000">
+                        Side Skirt - <strong>$75,000</strong>
+                    </label>
+                </div>
+
+                <!-- Exhaust -->
+                <div class="modification-option">
+                    <label for="exhaust">
+                        <input type="checkbox" id="exhaust" value="35000">
+                        Exhaust - <strong>$35,000</strong>
+                    </label>
+                </div>
+
+                <!-- Frame (Rollcage) -->
+                <div class="modification-option">
+                    <label for="rollcage">
+                        <input type="checkbox" id="rollcage" value="75000">
+                        Frame (Rollcage) - <strong>$75,000</strong>
+                    </label>
+                </div>
+
+                <!-- Grill -->
+                <div class="modification-option">
+                    <label for="grill">
+                        <input type="checkbox" id="grill" value="30000">
+                        Grill - <strong>$30,000</strong>
+                    </label>
+                </div>
+
+                <!-- Hood -->
+                <div class="modification-option">
+                    <label for="hood">
+                        <input type="checkbox" id="hood" value="100000">
+                        Hood - <strong>$100,000</strong>
+                    </label>
+                </div>
+
+                <!-- Left Fender -->
+                <div class="modification-option">
+                    <label for="leftFender">
+                        <input type="checkbox" id="leftFender" value="75000">
+                        Left Fender - <strong>$75,000</strong>
+                    </label>
+                </div>
+
+                <!-- Engine Block -->
+                <div class="modification-option">
+                    <label for="engineBlock">
+                        <input type="checkbox" id="engineBlock" value="35000">
+                        Engine Block - <strong>$35,000</strong>
+                    </label>
+                </div>
+
+                <!-- Livery -->
+                <div class="modification-option">
+                    <label for="livery">
+                        <input type="checkbox" id="livery" value="75000">
+                        Livery - <strong>$75,000</strong>
+                    </label>
+                </div>
+
+                <!-- Trim -->
+                <div class="modification-option">
+                    <label for="trim">
+                        <input type="checkbox" id="trim" value="50000">
+                        Trim - <strong>$50,000</strong>
+                    </label>
+                </div>
+
+                <!-- Window Tint 0% -->
+                <div class="modification-option">
+                    <label for="windowTint0">
+                        <input type="checkbox" id="windowTint0" value="2000">
+                        Window Tint 0% - <strong>$2,000</strong>
+                    </label>
+                </div>
+
+                <!-- Window Tint 10% -->
+                <div class="modification-option">
+                    <label for="windowTint10">
+                        <input type="checkbox" id="windowTint10" value="1000">
+                        Window Tint 10% - <strong>$1,000</strong>
+                    </label>
+                </div>
+
+                <!-- Window Tint 50% -->
+                <div class="modification-option">
+                    <label for="windowTint50">
+                        <input type="checkbox" id="windowTint50" value="7000">
+                        Window Tint 50% - <strong>$7,000</strong>
+                    </label>
+                </div>
+
+                <!-- Window Tint 60% -->
+                <div class="modification-option">
+                    <label for="windowTint60">
+                        <input type="checkbox" id="windowTint60" value="4000">
+                        Window Tint 60% - <strong>$4,000</strong>
+                    </label>
+                </div>
+
+                <!-- Window Tint 80% -->
+                <div class="modification-option">
+                    <label for="windowTint80">
+                        <input type="checkbox" id="windowTint80" value="15000">
+                        Window Tint 80% - <strong>$15,000</strong>
+                    </label>
+                </div>
+
+                <!-- Window Tint 100% -->
+                <div class="modification-option">
+                    <label for="windowTint100">
+                        <input type="checkbox" id="windowTint100" value="50000">
+                        Window Tint 100% - <strong>$50,000</strong>
+                    </label>
+                </div>
+
+                <!-- Window -->
+                <div class="modification-option">
+                    <label for="window">
+                        <input type="checkbox" id="window" value="50000">
+                        Window - <strong>$50,000</strong>
+                    </label>
+                </div>
+
+                <!-- Struts -->
+                <div class="modification-option">
+                    <label for="struts">
+                        <input type="checkbox" id="struts" value="35000">
+                        Struts - <strong>$35,000</strong>
+                    </label>
+                </div>
+
+                <!-- Front Vanity Plates -->
+                <div class="modification-option">
+                    <label for="frontVanityPlates">
+                        <input type="checkbox" id="frontVanityPlates" value="30000">
+                        Front Vanity Plates - <strong>$30,000</strong>
+                    </label>
+                </div>
+
+                <!-- License Plate Holder -->
+                <div class="modification-option">
+                    <label for="licensePlateHolder">
+                        <input type="checkbox" id="licensePlateHolder" value="30000">
+                        License Plate Holder - <strong>$30,000</strong>
+                    </label>
+                </div>
+
+                <!-- License Plate -->
+                <div class="modification-option">
+                    <label for="licensePlate">
+                        <input type="checkbox" id="licensePlate" value="35000">
+                        License Plate - <strong>$35,000</strong>
+                    </label>
+                </div>
+
+                <!-- Plaque -->
+                <div class="modification-option">
+                    <label for="plaque">
+                        <input type="checkbox" id="plaque" value="35000">
+                        Plaque - <strong>$35,000</strong>
+                    </label>
+                </div>
+
+                <!-- Speakers -->
+                <div class="modification-option">
+                    <label for="speakers">
+                        <input type="checkbox" id="speakers" value="35000">
+                        Speakers - <strong>$35,000</strong>
+                    </label>
+                </div>
+
+                <!-- Trunk -->
+                <div class="modification-option">
+                    <label for="trunk">
+                        <input type="checkbox" id="trunk" value="35000">
+                        Trunk - <strong>$35,000</strong>
+                    </label>
+                </div>
+
+                <!-- Wings -->
+                <div class="modification-option">
+                    <label for="wings">
+                        <input type="checkbox" id="wings" value="50000">
+                        Wings - <strong>$50,000</strong>
+                    </label>
+                </div>
+
+                <!-- Fuel Tank -->
+                <div class="modification-option">
+                    <label for="fuelTank">
+                        <input type="checkbox" id="fuelTank" value="50000">
+                        Fuel Tank - <strong>$50,000</strong>
+                    </label>
+                </div>
+
+                <!-- Aerials -->
+                <div class="modification-option">
+                    <label for="aerials">
+                        <input type="checkbox" id="aerials" value="30000">
+                        Aerials - <strong>$30,000</strong>
+                    </label>
+                </div>
+
+                <!-- Arch Covers -->
+                <div class="modification-option">
+                    <label for="archCovers">
+                        <input type="checkbox" id="archCovers" value="35000">
+                        Arch Covers - <strong>$35,000</strong>
+                    </label>
+                </div>
+
+                <!-- Horns -->
+                <div class="modification-option">
+                    <label for="horns">
+                        <input type="checkbox" id="horns" value="50000">
+                        Horns - <strong>$50,000</strong>
+                    </label>
+                </div>
+
+                <!-- Hydraulics -->
+                <div class="modification-option">
+                    <label for="hydraulics">
+                        <input type="checkbox" id="hydraulics" value="75000">
+                        Hydraulics - <strong>$75,000</strong>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Vehicle Interior Modifications Section -->
+            <div class="form-section">
+                <h3>Vehicle Interior Modifications</h3>
+                
+                <!-- Interior -->
+                <div class="modification-option">
+                    <label for="interior">
+                        <input type="checkbox" id="interior" value="50000">
+                        Interior - <strong>$50,000</strong>
+                    </label>
+                </div>
+
+                <!-- Ornaments -->
+                <div class="modification-option">
+                    <label for="ornaments">
+                        <input type="checkbox" id="ornaments" value="30000">
+                        Ornaments - <strong>$30,000</strong>
+                    </label>
+                </div>
+
+                <!-- Dashboard -->
+                <div class="modification-option">
+                    <label for="dashboard">
+                        <input type="checkbox" id="dashboard" value="30000">
+                        Dashboard - <strong>$30,000</strong>
+                    </label>
+                </div>
+
+                <!-- Dial -->
+                <div class="modification-option">
+                    <label for="dial">
+                        <input type="checkbox" id="dial" value="30000">
+                        Dial - <strong>$30,000</strong>
+                    </label>
+                </div>
+
+                <!-- Shifting Leavers -->
+                <div class="modification-option">
+                    <label for="shiftingLeavers">
+                        <input type="checkbox" id="shiftingLeavers" value="30000">
+                        Shifting Leavers - <strong>$30,000</strong>
+                    </label>
+                </div>
+
+                <!-- Door Speaker -->
+                <div class="modification-option">
+                    <label for="doorSpeaker">
+                        <input type="checkbox" id="doorSpeaker" value="30000">
+                        Door Speaker - <strong>$30,000</strong>
+                    </label>
+                </div>
+
+                <!-- Seats -->
+                <div class="modification-option">
+                    <label for="seats">
+                        <input type="checkbox" id="seats" value="30000">
+                        Seats - <strong>$30,000</strong>
+                    </label>
+                </div>
+
+                <!-- Steering Wheels -->
+                <div class="modification-option">
+                    <label for="steeringWheels">
+                        <input type="checkbox" id="steeringWheels" value="30000">
+                        Steering Wheels - <strong>$30,000</strong>
+                    </label>
+                </div>
+
+                <!-- Vehicle Extras -->
+                <div class="modification-option">
+                    <label for="vehicleExtras">
+                        <input type="checkbox" id="vehicleExtras" value="5000">
+                        Vehicle Extras - <strong>$5,000</strong>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Paint Installation Section -->
+            <div class="form-section">
+                <h3>Paint Installation</h3>
+                
+                <!-- Primary Paint -->
+                <div class="modification-option">
+                    <label for="primaryPaint">
+                        <input type="checkbox" id="primaryPaint" value="35000">
+                        Primary - <strong>$35,000</strong>
+                    </label>
+                </div>
+
+                <!-- Secondary Paint -->
+                <div class="modification-option">
+                    <label for="secondaryPaint">
+                        <input type="checkbox" id="secondaryPaint" value="35000">
+                        Secondary - <strong>$35,000</strong>
+                    </label>
+                </div>
+
+                <!-- Pearlescent Paint -->
+                <div class="modification-option">
+                    <label for="pearlescentPaint">
+                        <input type="checkbox" id="pearlescentPaint" value="20000">
+                        Pearlescent - <strong>$20,000</strong>
+                    </label>
+                </div>
+
+                <!-- Interior Paint -->
+                <div class="modification-option">
+                    <label for="interiorPaint">
+                        <input type="checkbox" id="interiorPaint" value="35000">
+                        Interior - <strong>$35,000</strong>
+                    </label>
+                </div>
+
+                <!-- Dashboard Paint -->
+                <div class="modification-option">
+                    <label for="dashboardPaint">
+                        <input type="checkbox" id="dashboardPaint" value="35000">
+                        Dashboard - <strong>$35,000</strong>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Headlights Xenon & Neon Installation Section -->
+            <div class="form-section">
+                <h3>Headlights Xenon & Neon Installation</h3>
+                
+                <!-- Neon All 4 Neons -->
+                <div class="modification-option">
+                    <label for="neonAll4">
+                        <input type="checkbox" id="neonAll4" value="50000">
+                        Neon All 4 Neons - <strong>$50,000</strong>
+                    </label>
+                </div>
+
+                <!-- Neon Color -->
+                <div class="modification-option">
+                    <label for="neonColor">
+                        <input type="checkbox" id="neonColor" value="30000">
+                        Neon Color - <strong>$30,000</strong>
+                    </label>
+                </div>
+
+                <!-- Xenon Installation -->
+                <div class="modification-option">
+                    <label for="xenonInstallation">
+                        <input type="checkbox" id="xenonInstallation" value="50000">
+                        Xenon Installation - <strong>$50,000</strong>
+                    </label>
+                </div>
+
+                <!-- Xenon Color -->
+                <div class="modification-option">
+                    <label for="xenonColor">
+                        <input type="checkbox" id="xenonColor" value="50000">
+                        Xenon Color - <strong>$50,000</strong>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Wheel & Stancer Installation Section -->
+            <div class="form-section">
+                <h3>Wheel & Stancer Installation</h3>
+
+                <!-- Wheel Colour -->
+                <div class="modification-option">
+                    <label for="wheelColour">
+                        <input type="checkbox" id="wheelColour" value="35000">
+                        Wheel Colour - <strong>$35,000</strong>
+                    </label>
+                </div>
+
+                <!-- Tire Smoke Color -->
+                <div class="modification-option">
+                    <label for="tireSmokeColor">
+                        <input type="checkbox" id="tireSmokeColor" value="30000">
+                        Tire Smoke Color - <strong>$30,000</strong>
+                    </label>
+                </div>
+
+                <!-- Wheel Types -->
+                <div class="modification-option">
+                    <label for="wheelTypes">
+                        <input type="checkbox" id="wheelTypes" value="300000">
+                        Wheel Types - <strong>$300,000</strong>
+                    </label>
+                </div>
+
+                <!-- Tire Enhancements -->
+                <div class="modification-option">
+                    <label for="tireEnhancements">
+                        <input type="checkbox" id="tireEnhancements" value="50000">
+                        Tire Enhancements - <strong>$50,000</strong>
+                    </label>
+                </div>
+
+                <!-- Camber (Stancer) -->
+                <div class="modification-option">
+                    <label for="camber">
+                        <input type="checkbox" id="camber" value="1000000">
+                        Camber (Stancer) - <strong>$1,000,000</strong>
+                    </label>
+                </div>
+
+                <!-- Spacers (Stancer) -->
+                <div class="modification-option">
+                    <label for="spacers">
+                        <input type="checkbox" id="spacers" value="500000">
+                        Spacers (Stancer) - <strong>$500,000</strong>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Performance Tune-Up Installation Section -->
+            <div class="form-section">
+                <h3>Performance Tune-Up</h3>
+
+                <!-- Engine -->
+                <div class="modification-option">
+                    <label for="engine">
+                        <input type="checkbox" id="engine" value="600000">
+                        Engine - <strong>$600,000</strong>
+                    </label>
+                </div>
+
+                <!-- Brakes -->
+                <div class="modification-option">
+                    <label for="brakes">
+                        <input type="checkbox" id="brakes" value="300000">
+                        Brakes - <strong>$300,000</strong>
+                    </label>
+                </div>
+
+                <!-- Transmission -->
+                <div class="modification-option">
+                    <label for="transmission">
+                        <input type="checkbox" id="transmission" value="600000">
+                        Transmission - <strong>$600,000</strong>
+                    </label>
+                </div>
+
+                <!-- Armour -->
+                <div class="modification-option">
+                    <label for="armour">
+                        <input type="checkbox" id="armour" value="600000">
+                        Armour - <strong>$600,000</strong>
+                    </label>
+                </div>
+
+                <!-- Turbo -->
+                <div class="modification-option">
+                    <label for="turbo">
+                        <input type="checkbox" id="turbo" value="300000">
+                        Turbo - <strong>$300,000</strong>
+                    </label>
+                </div>
+
+                <!-- Total Tune-Up -->
+                <div class="modification-option">
+                    <label for="totalTuneUp">
+                        <input type="checkbox" id="totalTuneUp" value="2500000">
+                        Total Tune-Up (Car) - <strong>$2,500,000</strong> <br>
+                        <strong>(Motorcycle) - $2,400,000</strong>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Suspension & NOS Installation Section -->
+            <div class="form-section">
+                <h3>Suspension & NOS Installation</h3>
+
+                <!-- Suspension Types -->
+                <div class="modification-option">
+                    <label for="suspensionLowered">
+                        <input type="checkbox" id="suspensionLowered" value="75000">
+                        Lowered Suspension - <strong>$75,000</strong>
+                    </label>
+                </div>
+
+                <div class="modification-option">
+                    <label for="suspensionStreet">
+                        <input type="checkbox" id="suspensionStreet" value="100000">
+                        Street Suspension - <strong>$100,000</strong>
+                    </label>
+                </div>
+
+                <div class="modification-option">
+                    <label for="suspensionSports">
+                        <input type="checkbox" id="suspensionSports" value="300000">
+                        Sports Suspension - <strong>$300,000</strong>
+                    </label>
+                </div>
+
+                <div class="modification-option">
+                    <label for="suspensionCompetition">
+                        <input type="checkbox" id="suspensionCompetition" value="600000">
+                        Competition Suspension - <strong>$600,000</strong>
+                    </label>
+                </div>
+
+                <!-- NOS Installation -->
+                <div class="modification-option">
+                    <label for="nos">
+                        <input type="checkbox" id="nos" value="300000">
+                        NOS (Air Filter) - <strong>$300,000</strong>
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Performance Tune-Up for Government Vehicles Section -->
+            <div class="form-section">
+                <h3>Performance Tune-Up for Government Vehicles</h3>
+
+                <!-- Government Vehicle Tune-Up (Police) -->
+                <div class="modification-option">
+                    <label for="governmentTuneUpPoliceCar">
+                        <input type="checkbox" id="governmentTuneUpPoliceCar" value="400000">
+                        Police Car Tune-Up - <strong>$400,000</strong>
+                    </label>
+                </div>
+
+                <div class="modification-option">
+                    <label for="governmentTuneUpPoliceMotorcycle">
+                        <input type="checkbox" id="governmentTuneUpPoliceMotorcycle" value="350000">
+                        Police Motorcycle Tune-Up - <strong>$350,000</strong>
+                    </label>
+                </div>
+
+                <!-- Government Vehicle Tune-Up (Other) -->
+                <div class="modification-option">
+                    <label for="governmentTuneUpOtherCar">
+                        <input type="checkbox" id="governmentTuneUpOtherCar" value="400000">
+                        Other Government Car Tune-Up - <strong>$400,000</strong>
+                    </label>
+                </div>
+
+                <div class="modification-option">
+                    <label for="governmentTuneUpOtherMotorcycle">
+                        <input type="checkbox" id="governmentTuneUpOtherMotorcycle" value="350000">
+                        Other Government Motorcycle Tune-Up - <strong>$350,000</strong>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Workshop Tool Sales to Public Section -->
+            <div class="form-section">
+                <h3>Workshop Tool Sales to Public</h3>
+                <label for="repairKitPublic">Repair Kit (50% Engine Only Fix) ($15,000/pcs, Max 5 pcs):</label>
+                <input type="number" id="repairKitPublic" max="5" />
+
+                <label for="cleaningKitPublic">Cleaning Kit ($8,000/pcs, Max 5 pcs):</label>
+                <input type="number" id="cleaningKitPublic" max="5" />
+            </div>
+
+            <button type="button" onclick="calculateTotal()">Calculate Total</button>
+
+            <div class="total">
+                <p>Total Price: $<span id="totalPrice">0</span></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function calculateTotal() {
+            // Get selected values
+            const servicePrice = parseInt(document.getElementById('service').value) || 0;
+            const onlineServicePrice = parseInt(document.getElementById('onlineService').value) || 0;
+            const vehicleCheckPrice = parseInt(document.getElementById('vehicleCheck').value) || 0;
+            const outOfFuelPrice = parseInt(document.getElementById('outOfFuel').value) || 0;
+            const tirePrice = parseInt(document.getElementById('numTires').value) || 0;
+            const partsPrice = parseInt(document.getElementById('numParts').value) || 0;
+            const helicopterServicePrice = parseInt(document.getElementById('helicopterService').value) || 0;
+            const towingPrice = parseInt(document.getElementById('towing').value) || 0;
+            const serviceAndWash = document.getElementById('serviceAndWash').checked ? 18000 : 0;
+
+            // Get values for workshop tool purchases
+            const advancedKitPrice = parseInt(document.getElementById('advancedKit').value) * 4000 || 0;
+            const repairKitPrice = parseInt(document.getElementById('repairKit').value) * 3500 || 0;
+            const cleaningKitPrice = parseInt(document.getElementById('cleaningKit').value) * 2500 || 0;
+            const linggisPrice = parseInt(document.getElementById('linggis').value) * 15000 || 0;
+            const kunciInggrisPrice = parseInt(document.getElementById('kunciInggris').value) * 20000 || 0;
+
+            // Get values for sales to public
+            const repairKitPublicPrice = parseInt(document.getElementById('repairKitPublic').value) * 15000 || 0;
+            const cleaningKitPublicPrice = parseInt(document.getElementById('cleaningKitPublic').value) * 8000 || 0;
+
+            // Vehicle Modifications: Handle checkboxes
+            let modificationPrice = 0;
+            const modifications = ['spoiler', 'frontBumper', 'rearBumper', 'roof', 'sideSkirt', 'exhaust', 'rollcage', 'grill', 'hood'];
+            modifications.forEach(mod => {
+                if (document.getElementById(mod).checked) {
+                    modificationPrice += parseInt(document.getElementById(mod).value);
+                }
+            });
+
+            // Calculate total price
+            const total = servicePrice + onlineServicePrice + vehicleCheckPrice + outOfFuelPrice + tirePrice + partsPrice + helicopterServicePrice + towingPrice + serviceAndWash + advancedKitPrice + repairKitPrice + cleaningKitPrice + linggisPrice + kunciInggrisPrice + repairKitPublicPrice + cleaningKitPublicPrice + modificationPrice;
+
+            // Format the total with thousands separator
+            const formattedTotal = total.toLocaleString();
+
+            // Update total price display
+            document.getElementById('totalPrice').textContent = formattedTotal;
+        }
+    </script>
+
+</body>
+</html>

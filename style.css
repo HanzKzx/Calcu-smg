@@ -1,0 +1,207 @@
+/* Basic styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 0.95em;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+}
+
+select, button {
+    padding: 8px;
+    font-size: 1em;
+    margin-bottom: 15px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+select {
+    background-color: #fff;
+}
+
+button {
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+/* Total Price Section */
+.total {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    color: #000000;
+}
+
+.total p {
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin: 0;
+}
+
+/* Form Styling */
+form {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+form h3 {
+    color: #000000;
+}
+
+/* Style for each section */
+.form-section {
+    margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    select, button {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    .form-section {
+        margin-bottom: 12px;
+    }
+
+    .total {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    select, button {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    .total {
+        font-size: 1.2em;
+    }
+
+    form {
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+
+    .form-section {
+        margin-bottom: 12px;
+    }
+
+    .modification-option {
+        margin-bottom: 12px;
+    }
+
+    .modification-option label {
+        font-size: 15px;
+    }
+
+    .modification-option input[type="checkbox"] {
+        margin-right: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.1em;
+    }
+
+    select, button {
+        font-size: 0.85em;
+        padding: 8px;
+    }
+
+    .total {
+        font-size: 1.1em;
+    }
+
+    form {
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+
+    .form-section {
+        margin-bottom: 10px;
+    }
+
+    .modification-option {
+        margin-bottom: 8px;
+    }
+
+    .modification-option label {
+        font-size: 14px;
+    }
+
+    .modification-option input[type="checkbox"] {
+        margin-right: 6px;
+    }
+}
