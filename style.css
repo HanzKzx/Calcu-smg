@@ -1,134 +1,208 @@
-/* Basic styling */
+/* Global Styles */
 body {
-    font-family: 'Poppins', Arial, sans-serif;
-    background-color: #f4f7fb;
-    color: #444;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f4f4f9, #ffffff);
+    color: #333;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    box-sizing: border-box;
+    animation: fadeIn 1s ease-in;
 }
 
+/* Container */
 .container {
-    width: 80%;
-    margin: auto;
-    padding: 40px;
+    width: 85%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    animation: slideInUp 1s ease-out;
 }
 
+/* Header */
 h1 {
     text-align: center;
-    color: #2c3e50;
-    margin-bottom: 30px;
-    font-size: 3em;
+    color: #2d2d2d;
+    font-size: 2.8em;
     text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
     font-weight: 700;
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 0.3s;
 }
 
+/* Subheader */
 h3 {
-    color: #34495e;
-    font-size: 1.6em;
+    color: #444;
+    font-size: 1.7em;
     margin-bottom: 15px;
-    font-weight: 500;
-}
-
-label {
-    font-size: 1.1em;
-    margin-bottom: 8px;
-    display: block;
     font-weight: 600;
-    color: #2c3e50;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 0.6s;
 }
 
-select, button {
-    padding: 12px;
+/* Form Label */
+label {
     font-size: 1em;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: 500;
+    color: #666;
+}
+
+/* Select and Button */
+select, button {
+    padding: 12px 20px;
+    font-size: 1.1em;
     margin-bottom: 20px;
     width: 100%;
     border-radius: 8px;
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
+    background-color: #f9f9f9;
     transition: all 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeInUp 0.7s ease-in forwards;
 }
 
+/* Select */
 select {
     background-color: #fff;
-    border-color: #aaa;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Button Styling */
 button {
-    background-color: #1abc9c;
+    background-color: #4a90e2;
     color: white;
     cursor: pointer;
-    transition: all 0.3s ease, transform 0.2s ease;
-    font-weight: 700;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: none;
 }
 
 button:hover {
-    background-color: #16a085;
-    transform: translateY(-4px);
+    background-color: #357ab7;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-button:active {
-    transform: translateY(2px);
+/* Button Focus Effect */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Total Price Section */
 .total {
-    font-size: 1.6em;
+    font-size: 1.5em;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 30px;
     text-align: center;
-    color: #2c3e50;
+    color: #333;
+    opacity: 0;
+    animation: fadeInUp 0.7s ease-in forwards;
+    animation-delay: 0.8s;
 }
 
 .total p {
     background-color: #fff;
-    padding: 12px 25px;
+    padding: 15px 25px;
     border-radius: 10px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     display: inline-block;
     margin: 0;
+    font-size: 1.3em;
+    color: #4a90e2;
+    transform: scale(0.9);
+    animation: scaleUp 0.5s ease-in-out forwards;
 }
 
 /* Form Styling */
 form {
     background-color: #fff;
-    padding: 35px;
+    padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
-    transition: transform 0.3s ease;
-}
-
-form:hover {
-    transform: translateY(-10px);
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 1s;
 }
 
 form h3 {
-    color: #2c3e50;
+    color: #333;
     margin-bottom: 15px;
 }
 
-/* Style for each section */
+/* Section Styling */
 .form-section {
     margin-bottom: 20px;
 }
 
-/* Modification option styling */
+/* Custom Checkbox Styling */
 .modification-option {
+    display: flex;
+    align-items: center;
     margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeInUp 0.7s ease-in forwards;
+    animation-delay: 1.2s;
 }
 
 .modification-option label {
-    font-size: 16px;
-    font-weight: 500;
-    color: #555;
+    font-size: 1.1em;
+    margin-left: 10px;
+    color: #666;
 }
 
 .modification-option input[type="checkbox"] {
-    margin-right: 10px;
+    transform: scale(1.2);
+    margin-right: 15px;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 
 /* Responsive Design */
@@ -138,7 +212,7 @@ form h3 {
     }
 
     h1 {
-        font-size: 2.5em;
+        font-size: 2.4em;
     }
 
     h3 {
@@ -146,16 +220,12 @@ form h3 {
     }
 
     select, button {
-        font-size: 1.1em;
-        padding: 14px;
-    }
-
-    .form-section {
-        margin-bottom: 25px;
+        font-size: 1em;
+        padding: 12px 18px;
     }
 
     .total {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
 }
 
@@ -165,76 +235,54 @@ form h3 {
     }
 
     h1 {
-        font-size: 2.2em;
+        font-size: 2em;
     }
 
     h3 {
-        font-size: 1.4em;
+        font-size: 1.3em;
     }
 
     select, button {
-        font-size: 1.1em;
-        padding: 15px;
-    }
-
-    .total {
-        font-size: 1.4em;
+        font-size: 0.95em;
+        padding: 12px 16px;
     }
 
     form {
-        padding: 30px;
-        margin-bottom: 25px;
+        padding: 25px;
     }
 
-    .form-section {
-        margin-bottom: 20px;
-    }
-
-    .modification-option {
-        margin-bottom: 20px;
+    .total {
+        font-size: 1.3em;
     }
 
     .modification-option label {
-        font-size: 15px;
+        font-size: 1em;
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 1.8em;
+        font-size: 1.7em;
     }
 
     h3 {
-        font-size: 1.3em;
+        font-size: 1.2em;
     }
 
     select, button {
-        font-size: 1em;
-        padding: 16px;
+        font-size: 0.9em;
+        padding: 12px 14px;
     }
 
     .total {
-        font-size: 1.3em;
-    }
-
-    form {
-        padding: 25px;
-        margin-bottom: 15px;
+        font-size: 1.2em;
     }
 
     .form-section {
-        margin-bottom: 18px;
-    }
-
-    .modification-option {
-        margin-bottom: 18px;
+        margin-bottom: 15px;
     }
 
     .modification-option label {
-        font-size: 14px;
-    }
-
-    .modification-option input[type="checkbox"] {
-        margin-right: 10px;
+        font-size: 0.95em;
     }
 }
