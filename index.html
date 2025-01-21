@@ -15,6 +15,7 @@
             <!-- Service Section -->
             <div class="form-section">
                 <h3>Services</h3>
+                <h3>Found Bug? Add Discord @rikokzx</h3>
                 <label for="service">Choose a service:</label>
                 <select id="service">
                     <option value="0">Select a service...</option>
@@ -212,7 +213,7 @@
                 <div class="modification-option">
                     <label for="leftFender">
                         <input type="checkbox" id="leftFender" value="75000">
-                        Left Fender \ Right Fender - <strong>$75,000</strong>
+                        Left Fender - <strong>$75,000</strong>
                     </label>
                 </div>
 
@@ -750,6 +751,7 @@
 
             <div class="total">
                 <p>Total Price: $<span id="totalPrice">0</span></p>
+                <button onclick="resetTotal()">Reset</button>
             </div>
         </form>
     </div>
@@ -780,10 +782,23 @@
 
             // Vehicle Modifications: Handle checkboxes
             let modificationPrice = 0;
-            const modifications = ['spoiler', 'frontBumper', 'windowTint80', 'rearBumper', 'roof', 'sideSkirt', 'exhaust', 'rollcage', 'grill', 'hood', 'leftFender', 'engineBlock', 'engineBlock', 'livery', 'trim', 'windowTint0', 'windowTint10', 'windowTint50', 'windowTint60', 'windowTint100', 'window', 'struts', 'frontVanityPlates', 'licensePlateHolder', 'licensePlate', 'plaque', 'speakers', 'trunk', 'wings', 'fuelTank', 'aerials', 'archCovers', 'horns', 'hydraulics', 'interior', 'ornaments', 'dashboard', 'outOfFuel','dial', 'shiftingLeavers', 'doorSpeaker', 'seats', 'steeringWheels', 'vehicleExtras', 'primaryPaint', 'secondaryPaint', 'pearlescentPaint', 'interiorPaint', 'dashboardPaint', 'neonAll4', 'neonColor', 'xenonInstallation', 'xenonColor', 'wheelColour', 'tireSmokeColor', 'wheelTypes', 'camber', 'spacers', 'engine', 'brakes', 'transmission', 'armour', 'turbo', 'totalTuneUp', 'suspensionLowered', 'suspensionStreet', 'suspensionSports', 'suspensionCompetition', 'nos', 'governmentTuneUpPoliceCar', 'governmentTuneUpPoliceMotorcycle', 'governmentTuneUpOtherCar', 'repairKitPublic', 'cleaningKitPublic'];
+            const modifications = [
+                'spoiler', 'frontBumper', 'windowTint80', 'rearBumper', 'roof', 'sideSkirt', 'exhaust', 'rollcage', 'grill',
+                'hood', 'leftFender', 'engineBlock', 'livery', 'trim', 'windowTint0', 'windowTint10', 'windowTint50', 'windowTint60', 
+                'windowTint100', 'window', 'struts', 'frontVanityPlates', 'licensePlateHolder', 'licensePlate', 'plaque', 'speakers', 
+                'trunk', 'wings', 'fuelTank', 'aerials', 'archCovers', 'horns', 'hydraulics', 'interior', 'ornaments', 'dashboard', 
+                'outOfFuel', 'dial', 'shiftingLeavers', 'doorSpeaker', 'seats', 'steeringWheels', 'vehicleExtras', 'primaryPaint', 
+                'secondaryPaint', 'pearlescentPaint', 'interiorPaint', 'dashboardPaint', 'neonAll4', 'neonColor', 'xenonInstallation', 
+                'xenonColor', 'wheelColour', 'tireSmokeColor', 'wheelTypes', 'camber', 'spacers', 'engine', 'brakes', 
+                'transmission', 'armour', 'turbo', 'totalTuneUp', 'suspensionLowered', 'suspensionStreet', 'suspensionSports', 
+                'suspensionCompetition', 'nos', 'governmentTuneUpPoliceCar', 'governmentTuneUpPoliceMotorcycle', 'governmentTuneUpOtherCar', 
+                'repairKitPublic', 'cleaningKitPublic'
+            ];
+
             modifications.forEach(mod => {
-                if (document.getElementById(mod).checked) {
-                    modificationPrice += parseInt(document.getElementById(mod).value);
+                const element = document.getElementById(mod);
+                if (element && element.checked) {
+                    modificationPrice += parseInt(element.value, 10);
                 }
             });
 
